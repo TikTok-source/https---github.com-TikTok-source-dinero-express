@@ -192,10 +192,10 @@ async function registrarClientePublico(e) {
 
   setGuardando(false)
 
-  if (error) {
-    setMensajeRegistro('Error al registrar: ' + error.message)
-    return
-  }
+ if (error) {
+  setMensajeRegistro('Ocurrió un error. Vuelve a intentarlo.')
+  return
+}
 
   setTokenSolicitud(data)
   setMensajeRegistro('¡Registro completado correctamente!')
@@ -406,7 +406,7 @@ if (!esRutaAdmin) {
               <p>Completa tus datos para comenzar.</p>
 
               <form onSubmit={registrarClientePublico}>
-                <label>Nombre completo</label>
+                <label>nombre completo</label>
                 <input
                   type="text"
                   value={nombre}
