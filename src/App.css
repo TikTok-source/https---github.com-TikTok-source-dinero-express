@@ -1797,3 +1797,36 @@ header button:hover {
   position: relative;
   z-index: 2;
 }
+.bancos-opciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 15px 0 20px;
+}
+
+.banco-opcion {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.banco-opcion img {
+  width: 100%;
+  height: 55px;
+  object-fit: contain;
+}
+
+.banco-opcion span {
+  font-weight: bold;
+}
+
+.banco-opcion.seleccionado {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}

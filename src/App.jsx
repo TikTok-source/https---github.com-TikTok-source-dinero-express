@@ -27,8 +27,15 @@ const [tokenSolicitud, setTokenSolicitud] = useState('')
 const [montoPrestamo, setMontoPrestamo] = useState(20000)
 const [plazoPrestamo, setPlazoPrestamo] = useState(6)
 const [tasaPrestamo, setTasaPrestamo] = useState(5)
+const [bancoSeleccionado, setBancoSeleccionado] = useState('')
 const [resultadoPrestamo, setResultadoPrestamo] = useState(null)
 const [mensajePrestamo, setMensajePrestamo] = useState('')
+const bancos = [
+  { nombre: 'Banreservas', imagen: '/logos/banreservas.jpeg' },
+  { nombre: 'BHD', imagen: '/logos/bhd.jpeg' },
+  { nombre: 'Banco Popular', imagen: '/logos/popular.jpeg' },
+  { nombre: 'Scotiabank', imagen: '/logos/scotiabank.jpeg' }
+]
 
   // Panel administrativo
   const [pagina, setPagina] = useState('Inicio')
@@ -473,6 +480,21 @@ if (!esRutaAdmin) {
                       </option>
                     ))}
                   </select>
+                  <label>Selecciona tu banco</label>
+
+<div className="bancos-opciones">
+  {bancos.map((banco) => (
+    <button
+      key={banco.nombre}
+      type="button"
+      className={`banco-opcion ${bancoSeleccionado === banco.nombre ? 'seleccionado' : ''}`}
+      onClick={() => setBancoSeleccionado(banco.nombre)}
+    >
+      <img src={banco.imagen} alt={banco.nombre} />
+      <span>{banco.nombre}</span>
+    </button>
+  ))}
+</div>
 
                   <div className="resumen-card">
                     <h3>Resumen de tu préstamo</h3>
