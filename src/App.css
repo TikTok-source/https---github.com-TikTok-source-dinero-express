@@ -1830,3 +1830,13 @@ header button:hover {
   border-color: #16a34a;
   background: #f0fdf4;
 }
+.mensaje-error {
+  color: #dc2626;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  margin: 12px 0;
+}

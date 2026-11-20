@@ -269,89 +269,8 @@ async function cargarSolicitudes()
 
   // Seleccionar un cliente
   async function seleccionarCliente(cliente) {
-    setClienteSeleccionado(cliente)
-    setCuentas([])
-    await cargarCuentas(cliente.id)
-  }
 
-  // Registrar una cuenta bancaria
-  async function registrarCuenta(e) {
-    e.preventDefault()
-    setError('')
-    setMensaje('')
-    setGuardando(true)
-
-    const { error } = await supabase
-      .from('cuentas_clientes')
-      .insert([
-        {
-          cliente_id: clienteId,
-          banco,
-          titular: titularCuentaAdmin,
-          tipo_cuenta: tipoCuenta,
-          numero_cuenta: numeroCuenta,
-          telefono_asociado: telefonoAsociado,
-          cuenta_principal: cuentaPrincipal
-        }
-      ])
-
-    setGuardando(false)
-
-    if (error) {
-      setError(error.message)
-      return
-    }
-
-    setMensaje('Cuenta bancaria registrada correctamente.')
-
-    setBanco('')
-    setTitularCuentaAdmin('')
-    setTipoCuenta('ahorro')
-    setNumeroCuenta('')
-    setTelefonoAsociado('')
-    setCuentaPrincipal(false)
-
-    if (clienteSeleccionado?.id === Number(clienteId)) {
-      cargarCuentas(clienteId)
-    }
-  }
-
-  
-async function solicitarPrestamo(e) {
-  e.preventDefault()
-  setMensajePrestamo('')
-  setResultadoPrestamo(null)
-  setGuardando(true)
-
-  const { data, error } = await supabase.rpc(
-    'crear_prestamo_automatico',
-    {
-      p_token: tokenSolicitud,
-      p_monto: Number(montoPrestamo),
-      p_plazo: Number(plazoPrestamo)
-    }
-  )
-
-  setGuardando(false)
-
-  if (error) {
-    setMensajePrestamo('No se pudo procesar: ' + error.message)
-    return
-  }
-
-  setResultadoPrestamo(data)
-  setMensajePrestamo('¡Tu préstamo ha sido aprobado automáticamente!')
-}
-
-  // Pantalla de carga
-  if (loading) {
-    return (
-      <div className="app">
-        <section className="panel">
-          <h2>Cargando...</h2>
-        </section>
-      </div>
-    )
+    
   }
 
   // Página pública de registro de clientes
@@ -441,7 +360,12 @@ if (!esRutaAdmin) {
                   required
                   placeholder="Nombre de tu calle"
                 />
-
+                
+                  {mensajeRegistro && (
+  <p className="mensaje-error">
+    {mensajeRegistro}
+  </p>
+)}
                 <button type="submit" disabled={guardando}>
                   {guardando ? 'Registrando...' : 'Crear mi cuenta →'}
                 </button>
