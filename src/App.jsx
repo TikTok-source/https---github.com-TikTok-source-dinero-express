@@ -193,7 +193,7 @@ async function registrarClientePublico(e) {
   setGuardando(false)
 
  if (error) {
-  setMensajeRegistro('Ocurrió un error. Vuelve a intentarlo.')
+  setMensajeRegistro('Error: ' + error.message)
   return
 }
 
