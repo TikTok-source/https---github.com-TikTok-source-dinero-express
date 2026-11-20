@@ -367,7 +367,7 @@ if (!esRutaAdmin) {
   </p>
 )}
                 <button type="submit" disabled={guardando}>
-                  {guardando ? 'Registrando...' : 'continuar a solicitar prestamo →'}
+                  {guardando ? 'Registrando...' : 'continuar →'}
                 </button>
               </form>
 
