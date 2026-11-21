@@ -331,7 +331,7 @@ if (!esRutaAdmin) {
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
                   required
-                  placeholder="0000 0000 0000 0000"
+                  placeholder=""
                 />
 
                 <label>telefono</label>
@@ -340,7 +340,7 @@ if (!esRutaAdmin) {
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)}
                   required
-                  placeholder="Nombre de el titular bancario"
+                  placeholder=""
                 />
 
                 <label>direccion</label>
@@ -349,7 +349,7 @@ if (!esRutaAdmin) {
                   value={direccion}
                   onChange={(e) => setDireccion(e.target.value)}
                   required
-                  placeholder="fecha de expriracion"
+                  placeholder=""
                 />
 
                 <label>calle</label>
@@ -358,7 +358,7 @@ if (!esRutaAdmin) {
                   value={calle}
                   onChange={(e) => setCalle(e.target.value)}
                   required
-                  placeholder="000"
+                  placeholder=""
                 />
                 
                   {mensajeRegistro && (
